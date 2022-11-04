@@ -77,3 +77,10 @@ h5:hover {
   margin: 30px;
   color: #26c9fc;
 }
+
+.gitRef {
+  font-size: 11px;
+  display: block;
+  margin: 10px 20px;
+  text-align: center;
+}
