@@ -43,7 +43,8 @@ function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   humidityElement.innerHTML = response.data.main.humidity;
   realfeelElement.innerHTML = Math.round(response.data.main.feels_like);
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -63,17 +64,16 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-//Search for location
+//Search for city
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city);
+  let cityInputElement = document.querySelector("#city-input");
+  searchCity(cityInputElement.value);
 }
 
 function searchLocation(position) {
   let apiKey = "79029da8c557ada5f3fa67fa4ac0ff29";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -82,29 +82,34 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 //Get temperature in Celsius and in Fahrenheit
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#actual-temperature");
-  temperatureElement.innerHTML = 62;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#actual-temperature");
-  temperatureElement.innerHTML = 17;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
-
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
 searchCity("Celbridge");
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusTemp = null;
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);

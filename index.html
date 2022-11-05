@@ -18,6 +18,39 @@
     <div class="container">
       <div class="weatherApp-wrapper">
         <div class="weatherApp">
+                      <form id="search-form" class="mb-3">
+              <div class = "row">
+                <div class="col-5">
+              <input
+                type="search"
+                placeholder="Search for a city"
+                                class ="form-contol"
+                autocomplete="off"
+                id="city-input"
+              />
+              </div>
+              <div class="col-3">
+                <div>
+                                <input type="submit" value="Search" class="btn btn-primary w-100" /> 
+                </div>
+
+              </div>
+
+              <div class="col-3">
+                                <div><input id="current-location-button" value ="Show Location" class="btn btn-primary w-90"/></div>
+
+              </div>
+              </div>
+            </form>
+
+            <div class = "overview">
+              <h1 id = "city"></h1>
+              <ul>
+                <li>Last updated: <span id = "date"></span></li>
+                              <li><span id="description"></span></li>
+              </ul>
+            </div>
+            <div class = "row">
           <div class="col-6">
             <div class="de-flex weather-temperature">
               <img
@@ -25,48 +58,31 @@
                 alt="Clear"
                 id="icon"
               />
-              <div class="col-6">
-                 <ul>
-              <li><span id="city"></span></li>
-              <li><span id="date"></span></li>
-              <li>
-                Temperature:
-                <span class="temperature" id="actual-temperature"></span>
-                <span class="units">
-                  <a href="#" id="celsius-link"> ℃</a> |
+              <strong id="actual-temperature"></strong>
+                              <span class="units">
+                  <a href="#" id="celsius-link" class="active"> ℃</a> |
                   <a href="#" id="fahrenheit-link">℉</a>
                 </span>
-              </li>
               </div>
-            </div>
-            <button id="current-location-button">Show Location</button>
+               </div>
+                </div>
 
-            <form class="search" id="search-form">
-              <input
-                type="search"
-                placeholder="Search for a city"
-                autocomplete="off"
-                autofocus="on"
-                id="city-input"
-              />
-              <input type="Submit" value="Search" />
-            </form>
-
-           
-              <li><span id="description"></span></li>
-              <li>Humidity: <span id="humidity"></span>%</li>
+              <div class="col-6">
+                 <ul>
+                                <li>Humidity: <span id="humidity"></span>%</li>
               <li>Wind Speed: <span id="wind"></span> Km/H</li>
               <li>Real feel: <span id="real-feel"></span>℃</li>
-            </ul>
-          </div>
-        </div>
+              </ul>
+              </div>
+            </div>
+            </div>
+           
         <small
           ><a
             href="https://github.com/aislingkelly636/WeatherApp"
             target="_blank"
             >Open-source code</a
-          >, by Aisling Kelly</small
-        >
+          >, by Aisling Kelly</small>
       </div>
     </div>
     <script src="app.js"></script>
