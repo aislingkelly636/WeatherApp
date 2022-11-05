@@ -1,3 +1,15 @@
+.weatherApp-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.weatherApp {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 10px;
+  outline: lightblue solid 3px;
+}
+
 ul {
   margin: 5px 0 20px 0;
   padding: 0;
@@ -10,6 +22,10 @@ li {
   height: 18px;
   line-height: 1;
   list-style: none;
+}
+
+li:first-letter {
+  text-transform: capitalize;
 }
 
 h1 {
@@ -35,13 +51,6 @@ h5 {
 
 h5:hover {
   color: black;
-}
-
-.container {
-  display: flex;
-  margin: 0 auto;
-  margin-top: 10px;
-  outline: lightblue solid 3px;
 }
 
 .column-1 {
@@ -78,7 +87,7 @@ h5:hover {
   color: #26c9fc;
 }
 
-.gitRef {
+small {
   font-size: 11px;
   display: block;
   margin: 10px 20px;
