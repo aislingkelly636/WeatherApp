@@ -81,7 +81,7 @@ li:first-letter {
 
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .weather-forecast-temperature-min {

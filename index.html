@@ -18,72 +18,90 @@
     <div class="container">
       <div class="weatherApp-wrapper">
         <div class="weatherApp">
-                      <form id="search-form" class="mb-3">
-              <div class = "row">
-                <div class="col-5">
-              <input
-                type="search"
-                placeholder="Search for a city"
-                                class ="form-contol"
-                autocomplete="off"
-                id="city-input"
-              />
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-5">
+                <input
+                  type="search"
+                  placeholder="Search for a city"
+                  class="form-contol"
+                  autocomplete="off"
+                  id="city-input"
+                />
               </div>
               <div class="col-3">
                 <div>
-                                <input type="submit" value="Search" class="btn btn-primary w-100" /> 
+                  <input
+                    type="submit"
+                    value="Search"
+                    class="btn btn-primary w-100"
+                  />
                 </div>
-
               </div>
-
               <div class="col-3">
-                                <div><input id="current-location-button" value ="Show Location" class="btn btn-primary w-90"/></div>
-
+                <div>
+                  <input
+                    id="current-location-button"
+                    value="Show Location"
+                    class="btn btn-primary w-90"
+                  />
+                </div>
               </div>
-              </div>
-            </form>
-
-            <div class = "overview">
-              <h1 id = "city"></h1>
-              <ul>
-                <li>Last updated: <span id = "date"></span></li>
-                              <li><span id="description"></span></li>
-              </ul>
             </div>
-            <div class = "row">
-          <div class="col-6">
-            <div class="de-flex weather-temperature">
-              <img
-                src=""
-                alt="Clear"
-                id="icon"
-              />
-              <strong id="actual-temperature"></strong>
-                              <span class="units">
+          </form>
+
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li><span id="description"></span></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="de-flex weather-temperature">
+                <img src="" alt="Clear" id="icon" />
+                <strong id="actual-temperature"></strong>
+                <span class="units">
                   <a href="#" id="celsius-link" class="active"> ℃</a> |
                   <a href="#" id="fahrenheit-link">℉</a>
                 </span>
               </div>
-               </div>
-                </div>
-
-              <div class="col-6">
-                 <ul>
-                                <li>Humidity: <span id="humidity"></span>%</li>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: <span id="humidity"></span>%</li>
               <li>Wind Speed: <span id="wind"></span> Km/H</li>
               <li>Real feel: <span id="real-feel"></span>℃</li>
-              </ul>
+            </ul>
+          </div>
+
+          <div class="weather-forecast">
+            <div class="row">
+              <div class="col-2">
+                <div class="weather-forecast-date">
+                  <h6>Thurs</h6>
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="few clouds"
+                    width="42"
+                  />
+                  <div class="weather-forecast-temperatures">
+                    <span class="weather-forecast-temperatures-max"> 18°</span>
+                    <span class="weather-forecast-temperatures-min"> 10°</span>
+                  </div>
+                </div>
               </div>
             </div>
-            </div>
-           
-        <small
-          ><a
-            href="https://github.com/aislingkelly636/WeatherApp"
-            target="_blank"
-            >Open-source code</a
-          >, by Aisling Kelly</small>
+          </div>
+        </div>
       </div>
+      <small
+        ><a href="https://github.com/aislingkelly636/WeatherApp" target="_blank"
+          >Open-source code</a
+        >, by Aisling Kelly</small
+      >
     </div>
     <script src="app.js"></script>
   </body>
