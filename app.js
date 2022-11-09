@@ -31,6 +31,34 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `            
+              <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="few clouds"
+                    width="42"
+                  />
+                  <div class="weather-forecast-temperatures">
+                    <span class="weather-forecast-temperatures-max"> 18°</span>
+                    <span class="weather-forecast-temperatures-min"> 10°</span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 //Get location and weather conditions
 function displayWeatherCondition(response) {
   let cityElement = document.querySelector("#city");
@@ -105,7 +133,6 @@ function convertToCelsius(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
-searchCity("Celbridge");
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
@@ -113,3 +140,6 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusTemp = null;
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+searchCity("Celbridge");
+displayForecast();
