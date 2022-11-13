@@ -32,7 +32,7 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-//Weekly forecase
+//Weekly forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -52,7 +52,7 @@ function displayForecast(response) {
                       forecastDay.weather[0].icon
                     }@2x.png"
                     alt="few clouds"
-                    width="42"
+                    id="weather-icons"
                   />
                   <div class="weather-forecast-temperatures">
                     <span class="weather-forecast-temperatures-max"> ${Math.round(
@@ -89,7 +89,6 @@ function displayWeatherCondition(response) {
   let descriptionElement = document.querySelector("#description");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
   cityElement.innerHTML = response.data.name;
   celsiusTemp = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemp);

@@ -24,7 +24,7 @@
                 <input
                   type="search"
                   placeholder="Search for a city"
-                  class="form-contol"
+                  class="form-control"
                   autocomplete="off"
                   id="city-input"
                 />
@@ -68,22 +68,26 @@
                 </span>
               </div>
             </div>
+            <div class="col-6" id="weather-details">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind Speed: <span id="wind"></span> m/h</li>
+                <li>Real feel: <span id="real-feel"></span>℃</li>
+              </ul>
+            </div>
           </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Wind Speed: <span id="wind"></span> Km/H</li>
-              <li>Real feel: <span id="real-feel"></span>℃</li>
-            </ul>
-          </div>
+
           <div class="weather-forecast" id="forecast"></div>
+          <small
+            ><a
+              href="https://github.com/aislingkelly636/WeatherApp"
+              target="_blank"
+              >Open-source code</a
+            >
+            by Aisling Kelly</small
+          >
         </div>
       </div>
-      <small
-        ><a href="https://github.com/aislingkelly636/WeatherApp" target="_blank"
-          >Open-source code</a
-        >, by Aisling Kelly</small
-      >
     </div>
     <script src="app.js"></script>
   </body>

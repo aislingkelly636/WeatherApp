@@ -1,13 +1,17 @@
 body {
+  background-image: url("imgs/13.gif");
+  background-size: cover;
+  background-position: top;
   font-family: arial, sans-serif;
 }
 
 h1 {
-  color: #878787;
-  font-size: 24px;
+  color: white;
+  font-size: 44px;
   font-weight: 100;
   line-height: 28px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 ul {
@@ -19,15 +23,26 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-
-  color: rgb(135, 135, 135);
+  color: white;
   font-size: 16px;
   font-weight: 100;
-  line-height: 19px;
+  line-height: 1.5;
 }
 
 li:first-letter {
   text-transform: capitalize;
+}
+
+small {
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  margin-top: 150px;
+  align-items: center;
 }
 
 .weatherApp-wrapper {
@@ -36,13 +51,25 @@ li:first-letter {
 }
 
 .weatherApp {
-  padding: 20px;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 40px;
 }
 
 .overview {
   margin-bottom: 20px;
+}
+
+.form-control {
+  height: 40px;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
+}
+.btn {
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 .weather-temperature img {
@@ -74,13 +101,21 @@ li:first-letter {
 }
 
 .weather-forecast {
-  margin-top: 20px;
-  text-align: center;
-  color: #000;
+  margin-top: 50px;
+}
+
+.weather-forecast-temperatures {
+  display: block;
+  margin: 0 0 0 15px;
+  color: white;
+  font-size: 13px;
 }
 
 .weather-forecast-date {
+  display: block;
+  margin: 0px 20px 0 20px;
   font-size: 16px;
+  color: white;
   opacity: 1;
 }
 
@@ -88,16 +123,41 @@ li:first-letter {
   opacity: 0.5;
 }
 
-.weather-forecast-temperatures {
-  font-size: 13px;
-}
-
 #current-location-button {
   width: 150px;
 }
 
-small {
+#actual-temperature {
+  color: white;
+}
+
+#celsius-link {
+  color: blue;
+}
+
+#fahrenheit-link {
+  color: blue;
+}
+
+#fahrenheit-link .active {
+  color: white;
+}
+
+.units {
+  color: white;
+}
+
+#icon {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+#weather-icons {
+  width: 60px;
+}
+
+#weather-details {
   display: block;
-  margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
